@@ -5,23 +5,28 @@ import org.openqa.selenium.WebDriver;
 
 public class RegisterPage extends BasePage {
 
-    public String lblUserID = "UserID";
-    public String lblPassword = "Password";
-    public String lblLogin = "Login";
-    public String lblHere = "here";
+    public final String lblEmailID = "Email ID";
+    public final String lblSubmit = "Submit";
+    public final String lblUserIDValue = "//td[text()='User ID :']/following-sibling::td";
+    public final String lblPasswordValue = "//td[text()='Password :']/following-sibling::td";
 
     public RegisterPage(WebDriver driver) {
         super(driver);
     }
 
-    public void login(String userName, String password) {
-        enterToDynamicTextBox(lblUserID, userName);
-        enterToDynamicTextBox(lblPassword, password);
-        clickToDynamicButton(lblLogin);
+    public void fillEmail(String email) {
+        enterToDynamicTextBox(lblEmailID, email);
+        clickToDynamicButton(lblSubmit);
     }
 
-    public void clickHereLink() {
-        clickToDynamicLink(lblHere);
+    public String getUserID(){
+        waitForElementVisible(lblUserIDValue);
+        return getTextElement(lblUserIDValue);
+    }
+
+    public String getPassword(){
+        waitForElementVisible(lblPasswordValue);
+        return getTextElement(lblPasswordValue);
     }
 
 }

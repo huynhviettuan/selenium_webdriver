@@ -5,10 +5,10 @@ import org.openqa.selenium.WebDriver;
 
 public class HomePage extends BasePage {
 
-    public String lblUserID = "UserID";
-    public String lblPassword = "Password";
-    public String lblLogin = "LOGIN";
-    public String lblHere = "here";
+    public final String lblUserID = "UserID";
+    public final String lblPassword = "Password";
+    public final String lblLogin = "LOGIN";
+    public final String lblHere = "here";
 
     public HomePage(WebDriver driver) {
         super(driver);

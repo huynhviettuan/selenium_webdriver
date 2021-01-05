@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="Suite" parallel = "false">
+<suite name="Suite" parallel="false">
+
+    <listeners>
+        <listener
+                class-name="commons.report.ExtentTestListener"/>
+    </listeners>
 
     <test name="Run on CHROME BROWSER">
-        <parameter name = "browser" value = "chrome"/>
+        <parameter name="browser" value="chrome"/>
         <classes>
             <class name="bankguru.SampleTCs"/>
         </classes>
